@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>The Geometry of Resonance</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">The Geometry of Resonance</h1>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(octawave)</span></code></pre></div>
+<div id="the-geometry-of-resonance-space-symmetrical-interference-and-the-octawave-model" class="section level1">
+<h1>The Geometry of Resonance: Space, Symmetrical Interference, and the
+Octawave Model</h1>
+<p><strong>Author:</strong> Katharina Maria Brecht<br />
+<strong>ORCID:</strong> 0009-0001-2176-7476<br />
+<strong>Status:</strong> Independent Research / Technical
+Documentation</p>
+<hr />
+<div id="abstract" class="section level3">
+<h3>Abstract</h3>
+<p>This paper introduces the theoretical foundation of the R package
+<code>octawave</code>. It explores how geometric bodies—specifically the
+regular octahedron and higher symmetric fullerenes—act as spatial
+resonance centers. By slicing these three-dimensional wave fields using
+simulated Magnetic Resonance Imaging (MRI), we visualize complex,
+symmetrical quantum interference patterns.</p>
+<hr />
+</div>
+<div id="introduction-the-freedom-of-spatial-geometry" class="section level3">
+<h3>1. Introduction: The Freedom of Spatial Geometry</h3>
+<p>Modern physics describes the universe not as an empty void, but as a
+dynamic network of fields, oscillations, and waves. Exploring these
+structures requires tools capable of visualizing hidden spatial
+symmetries. The <code>octawave</code> model was developed to bridge the
+gap between pure mathematical geometry and the visual dynamics of
+interference fields.</p>
+<p>The origin of this model lies in a fascination with the perfect
+symmetry of the octahedron. With its six defined vertices in
+three-dimensional space, it forms an elementary coordinate system for
+oscillations. When each vertex acts as an active source of a harmonic
+wave, the signals propagate spherically and collide at the center,
+creating a standing wave field of profound mathematical aesthetic.</p>
+<hr />
+</div>
+<div id="the-pentagon-hexagon-network-higher-symmetries-and-fullerene-interference" class="section level3">
+<h3>2. The Pentagon-Hexagon Network: Higher Symmetries and Fullerene
+Interference</h3>
+<div id="the-mathematical-topology-of-c₆₀" class="section level4">
+<h4>2.1 The Mathematical Topology of C₆₀</h4>
+<p>While the classical <code>octawave</code> is based on octahedral
+geometry, the fullerene model breaks traditional rectangular boundaries.
+It utilizes the architecture of the Buckminsterfullerene (C₆₀), a
+spherical carbon structure composed of exactly <strong>12
+pentagons</strong> and <strong>20 hexagons</strong>.</p>
+<p>In three-dimensional space, this structure is defined by 60 precisely
+coordinated vertices. In our model, each of these 60 points acts as an
+active resonance center. The vertices are mathematically intertwined via
+the Golden Ratio:</p>
+<p><span class="math display">\[\phi = \frac{1 +
+\sqrt{5}}{2}\]</span></p>
+<p>This mathematical framework ensures a flawless, spherical balance
+across the field.</p>
+</div>
+<div id="slicing-the-dream-hexagonal-quantum-patterns" class="section level4">
+<h4>2.2 Slicing the Dream: Hexagonal Quantum Patterns</h4>
+<p>When the mathematical MRI slice cuts horizontally through this
+60-vertex structure, the wavefronts collide within a highly complex
+network. In contrast to the clear, four-fold diamond patterns of the
+octahedron, the pentagons and hexagons generate an entirely new
+interference aesthetic:</p>
+<ul>
+<li><strong>The Polar Extremes (z ≈ ± 2.0):</strong> As the virtual scan
+enters the structure, an isolated, circular arrangement of exactly 5
+primary interference centers forms—the fundamental pentagon of the
+molecular cap.</li>
+<li><strong>The Equatorial Explosion (z = 0):</strong> When the scan
+reaches the exact equator of the model, the image transforms into a
+pulsating, hexagonal crystal lattice. The waves overlap so precisely
+that a vivid, geometric flower emerges.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="virtual-tomography-animation-loops-and-code-implementation" class="section level3">
+<h3>3. Virtual Tomography: Animation Loops and Code Implementation</h3>
+<div id="the-concept-of-the-mathematical-slice" class="section level4">
+<h4>3.1 The Concept of the Mathematical Slice</h4>
+<p>A three-dimensional wave field is often too complex for the human eye
+to comprehend at a single glance. The <code>octawave</code> package
+solves this by introducing a variable cutting plane—the parameter
+<code>z_slice</code>. By moving this mathematical scalpel step-by-step
+through the energy field, we generate two-dimensional snapshots of the
+interference patterns.</p>
+<p>To visualize a single slice of the octahedral field in R, users can
+execute the following core function:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(octawave)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Plotting a single horizontal slice at the equator</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">plot_mri_octawave</span>(<span class="at">z_slice =</span> <span class="fl">0.0</span>, <span class="at">lang =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+</div>
+<div id="the-octawave-loop-the-pulsing-diamond" class="section level4">
+<h4>3.2 The Octawave Loop: The Pulsing Diamond</h4>
+<p>In the classical animation, the package controls the scanner in fine
+steps through the geometry. As <code>z_slice</code> moves upward, the
+wave front expands and collides with the four equatorial vertices. At
+the exact center (<span class="math inline">\(z = 0\)</span>), the field
+explodes into a perfect, four-fold diamond geometry—a living square
+pulsing in mathematical resonance.</p>
+</div>
+<div id="the-fullerene-loop-the-living-quantum-sphere" class="section level4">
+<h4>3.3 The Fullerene Loop: The Living Quantum Sphere</h4>
+<p>The fullerene simulation scales this principle up to 60 centers.
+Instead of a static diamond, a crystalline mosaic transforms dynamically
+on the screen:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Simulating the complex C60 fullerene network slice</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">plot_mri_fullerene</span>(<span class="at">z_slice =</span> <span class="fl">0.0</span>, <span class="at">lang =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
+<p>As the scan progresses, pentagons open, transform into hexagons, and
+merge into a geometric flower before peacefully dissolving back into the
+quantum void.</p>
+<hr />
+</div>
+</div>
+<div id="conclusion-and-outlook-the-future-of-spatial-wave-modeling" class="section level3">
+<h3>4. Conclusion and Outlook: The Future of Spatial Wave Modeling</h3>
+<div id="summary-of-the-present-work" class="section level4">
+<h4>4.1 Summary of the Present Work</h4>
+<p>The <code>octawave</code> model demonstrates that complex,
+three-dimensional quantum and wave structures can be perfectly decoded
+for the human eye using mathematical tomographic slicing. Whether
+analyzing the clear, four-fold symmetry of the classical octahedron or
+the highly complex pentagon-hexagon lattice of fullerenes, this
+slice-by-slice approach uncovers hidden harmonic interferences. The
+package provides a precise mathematical tool and visual proof of the
+inherent aesthetic found within physical laws.</p>
+</div>
+<div id="future-perspectives-expanding-the-quantum-horizon" class="section level4">
+<h4>4.2 Future Perspectives: Expanding the Quantum Horizon</h4>
+<p>The journey of <code>octawave</code> has only just begun. The
+underlying architecture is built flexibly, allowing future expansions in
+two primary directions: 1. <strong>Dynamic Time-Phasing (<span class="math inline">\(t\)</span>):</strong> Introducing a time parameter
+to let waves pulse and flow dynamically in real-time, turning static
+loops into a living quantum ocean. 2. <strong>Higher Topological
+Formations:</strong> Loading even more complex geometric architectures
+into the virtual MRI protocol.</p>
+<p>The exploration of wave geometry reminds us that the human mind knows
+no boundaries—it can touch the symmetries of space in dreams and
+translate them into reality within a <strong>computational
+workspace</strong>.</p>
+<hr />
+</div>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
+<p>The structural definitions, geometric computations, and data
+visualization workflows utilized in this package are firmly rooted in
+established scientific literature, foundational textbooks, and software
+engineering frameworks:</p>
+<ul>
+<li><strong>Cataldo, F., Putz, M. V., &amp; Ori, O. (2015).</strong>
+<em>The topology of fullerenes.</em> Wiley Interdisciplinary Reviews:
+Computational Molecular Science, 5(6), 415-428. <a href="doi:10.1002/wcms.1207" class="uri">doi:10.1002/wcms.1207</a></li>
+<li><strong>Bobenko, A. I., &amp; Suris, Y. B. (2012).</strong>
+<em>Equations of the octahedron type.</em> International Mathematics
+Research Notices, 2012(11), 2411-2448. <a href="doi:10.1093/imrn/rnr083" class="uri">doi:10.1093/imrn/rnr083</a></li>
+<li><strong>Dresselhaus, M. S., Dresselhaus, G., &amp; Eklund, P. C.
+(1996).</strong> <em>Science of Fullerenes and Carbon Nanotubes.</em>
+Academic Press. <a href="ISBN:9780122218200" class="uri">ISBN:9780122218200</a></li>
+<li><strong>Coxeter, H. S. M. (1973).</strong> <em>Regular
+Polytopes.</em> Dover Publications. <a href="ISBN:9780486614809" class="uri">ISBN:9780486614809</a></li>
+<li><strong>Ligges, U. (2003).</strong> <em>Programmieren in R.</em>
+Springer-Verlag. (Methodological framework for R package structures and
+documentation standards).</li>
+<li><strong>Pfeiffer, R., et al. (1996).</strong> <em>The Geometry and
+Topology of Fullerenes.</em> Wiley. (Mathematical definitions of C₆₀
+vertex networks and spherical symmetries).</li>
+<li><strong>Wickham, H., &amp; Grolemund, G. (2017).</strong> <em>R for
+Data Science.</em> O’Reilly Media. (Methodological foundations for
+open-science data workflows and visualization aesthetics).</li>
+</ul>
+<hr />
+</div>
+<div id="acknowledgments" class="section level2">
+<h2>Acknowledgments</h2>
+<p>I would like to express my sincere gratitude to my Biostatistics
+Professor, Prof. Dr. Britta Tietjen, for her invaluable lectures and
+academic mentorship, which deeply inspired the foundations of this
+work.</p>
+<p>Finally, a special <em>Danke</em> must be made to JarekN, who
+ventures with me to the boundaries of worlds and walks through
+conceptual spaces beyond any holographic universe.</p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
