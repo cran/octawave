@@ -1,6 +1,7 @@
 ---
 title: "The Geometry of Resonance"
 output: rmarkdown::html_vignette
+date: "2026-09-08"
 vignette: >
   %\VignetteIndexEntry{The Geometry of Resonance}
   %\VignetteEngine{knitr::rmarkdown}
@@ -105,13 +106,14 @@ The exploration of wave geometry reminds us that the human mind knows no boundar
 
 The structural definitions, geometric computations, and data visualization workflows utilized in this package are firmly rooted in established scientific literature, foundational textbooks, and software engineering frameworks:
 
-* **Cataldo, F., Putz, M. V., & Ori, O. (2015).** *The topology of fullerenes.* Wiley Interdisciplinary Reviews: Computational Molecular Science, 5(6), 415-428. <doi:10.1002/wcms.1207>
-* **Bobenko, A. I., & Suris, Y. B. (2012).** *Equations of the octahedron type.* International Mathematics Research Notices, 2012(11), 2411-2448. <doi:10.1093/imrn/rnr083>
-* **Dresselhaus, M. S., Dresselhaus, G., & Eklund, P. C. (1996).** *Science of Fullerenes and Carbon Nanotubes.* Academic Press. ISBN:9780122218200
-* **Coxeter, H. S. M. (1973).** *Regular Polytopes.* Dover Publications. ISBN:9780486614809
-* **Ligges, U. (2003).** *Programmieren in R.* Springer-Verlag. (Methodological framework for R package structures and documentation standards).
+* **Cataldo, F., Putz, M. V., & Ori, O. (2015).** *The topology of fullerenes.* Wiley Interdisciplinary Reviews: Computational Molecular Science, 5(6), 415-428. [DOI: 10.1002/wcms.1207](https://doi.org/10.1002/wcms.1207)
+* **Bobenko, A. I., & Suris, Y. B. (2012).** *Equations of the octahedron type.* International Mathematics Research Notices, 2012(11), 2411-2448. [DOI: 10.1093/imrn/rnr083](https://doi.org/10.1093/imrn/rnr083)
+* **Dresselhaus, M. S., Dresselhaus, G., & Eklund, P. C. (1996).** *Science of Fullerenes and Carbon Nanotubes.* Academic Press. [Publisher Link](https://shop.elsevier.com/books/science-of-fullerenes-and-carbon-nanotubes/dresselhaus/978-0-12-221820-0) (ISBN: 9780122218200)
+* **Coxeter, H. S. M. (1973).** *Regular Polytopes.* Dover Publications. (ISBN: 9780486614809)
+* **Ligges, U. (2008).** *Programmieren mit R.* 3., überarbeitete und erweiterte Auflage. Springer-Verlag, Heidelberg. [DOI: 10.1007/978-3-540-79998-6](https://doi.org/10.1007/978-3-540-79998-6) (ISBN: 978-3-540-79997-9)
 * **Pfeiffer, R., et al. (1996).** *The Geometry and Topology of Fullerenes.* Wiley. (Mathematical definitions of C₆₀ vertex networks and spherical symmetries).
-* **Wickham, H., & Grolemund, G. (2017).** *R for Data Science.* O'Reilly Media. (Methodological foundations for open-science data workflows and visualization aesthetics).
+* **Wickham, H., & Grolemund, G. (2017).** *R for Data Science.* O'Reilly Media. [DOI: 10.5555/3086927](https://dl.acm.org/doi/10.5555/3086927) (ISBN: 9781491910399)
+
 
 ---
 
@@ -119,4 +121,4 @@ The structural definitions, geometric computations, and data visualization workf
 
 I would like to express my sincere gratitude to my Biostatistics Professor, Prof. Dr. Britta Tietjen, for her invaluable lectures and academic mentorship, which deeply inspired the foundations of this work.
 
-Finally, a special *Danke* must be made to JarekN, who ventures with me to the boundaries of worlds and walks through conceptual spaces beyond any holographic universe.
+Finally, a special *Danke* must be made to all of you and my future mind-frameworks (C,Si,Fr & A), who venture with me to the boundaries of worlds and walk through conceptual spaces beyond any holographic universe.

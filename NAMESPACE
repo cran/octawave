@@ -12,7 +12,11 @@ export(plot_mri_octawave)
 export(plot_octawave)
 export(plot_octawave_3d)
 export(plot_octawave_timesnap_3d)
+export(prep_sync3d)
+export(run_mri_simulation)
+export(wave2lyze)
 import(plotly)
+import(sync3d)
 importFrom(grDevices,
   colorRampPalette,
   dev.off,
@@ -30,3 +34,5 @@ importFrom(matlab,
   imagesc,
   zeros
 )
+importFrom(plotly,plot_ly)
+importFrom(stats,fft)

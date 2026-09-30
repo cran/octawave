@@ -10,7 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="Katharina M. Brecht" />
+<meta name="author" content="Katharina Maria Brecht" />
 
 <meta name="date" content="2026-08-26" />
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">Introduction to the octawave Package</h1>
-<h4 class="author">Katharina M. Brecht</h4>
+<h4 class="author">Katharina Maria Brecht</h4>
 <h4 class="date">2026-08-26</h4>
 
 
@@ -391,16 +391,28 @@ at a specific height along the Z-axis:</p>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Display a single MRI slice for Octawave structures</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">plot_mri_octawave</span>(<span class="at">z_slice =</span> <span class="fl">0.5</span>, <span class="at">lang =</span> <span class="st">&quot;en&quot;</span>)</span></code></pre></div>
 </div>
+<div id="advanced-spectral-analysis-webgl-3d-bridge" class="section level2">
+<h2>4. Advanced Spectral Analysis &amp; WebGL 3D Bridge</h2>
+<p>The package now includes high-performance analytical tools to process
+multidimensional wave spatial trajectories and bridge them seamlessly
+with the external WebGL rendering engine <code>sync3d</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># 1. Execute discrete Fast Fourier Transform (FFT) analysis on raw coordinates</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># (Watch the console for signature Kata-vibe!)</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>wave_analysis <span class="ot">&lt;-</span> <span class="fu">wave2lyze</span>(raw_quantum_data)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co"># 2. Construct the topological node-edge framework for sync3d acceleration</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>sync_bridge <span class="ot">&lt;-</span> <span class="fu">prep_sync3d</span>(wave_analysis)</span></code></pre></div>
+</div>
 <div id="automated-multi-format-export" class="section level2">
-<h2>4. Automated Multi-Format Export</h2>
+<h2>5. Automated Multi-Format Export</h2>
 <p>For scientific presentations, you can automatically export a complete
 series of slices as high-resolution PNG images and a multi-page
 presentation PDF with a single command. To comply with secure
 environment policies, files are written to a temporary directory by
 default, but a custom path can be supplied:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Automatically export slice series of Fullerene and Octawave models </span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># Developed by Katharina M. Brecht into a designated target directory</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">export_all_mri_scans</span>(<span class="at">start_z =</span> <span class="sc">-</span><span class="fl">2.0</span>, <span class="at">end_z =</span> <span class="fl">2.0</span>, <span class="at">schritte =</span> <span class="dv">10</span>, <span class="at">base_dir =</span> <span class="fu">tempdir</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Automatically export slice series of Fullerene and Octawave models </span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># Developed by Katharina M. Brecht into a designated target directory</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">export_all_mri_scans</span>(<span class="at">start_z =</span> <span class="sc">-</span><span class="fl">2.0</span>, <span class="at">end_z =</span> <span class="fl">2.0</span>, <span class="at">schritte =</span> <span class="dv">10</span>, <span class="at">base_dir =</span> <span class="fu">tempdir</span>())</span></code></pre></div>
 <p>After running this command with a custom directory pathway, two new
 folders (<code>Kathas_Fullerene_Quantum_Export</code> and
 <code>Kathas_Octawave_Quantum_Export</code>) will be created, containing

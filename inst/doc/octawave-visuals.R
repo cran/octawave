@@ -8,7 +8,7 @@ knitr::opts_chunk$set(
 library(octawave)
 
 ## ----echo=FALSE, out.width="65%", fig.align="center", fig.cap="Figure 1: Interactive 3D Quantum Field visualization showing the spatial symmetries and overlapping resonance zones of the octawave model."----
-# Übergenaue Absicherung von Katha: Falls das Bild fehlt, stürzt der Build nicht ab
+# Uebergenaue Absicherung von Katha: Falls das Bild fehlt, stuerzt der Build nicht ab
 if (file.exists("octawave-3d-field.png")) {
   knitr::include_graphics("octawave-3d-field.png")
 } else {

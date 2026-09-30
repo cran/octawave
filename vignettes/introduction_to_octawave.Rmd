@@ -1,7 +1,7 @@
 ---
 title: "Introduction to the octawave Package"
-author: "Katharina M. Brecht"
-date: "`r Sys.Date()`"
+author: "Katharina Maria Brecht"
+date: "2026-08-26"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction to the octawave Package}
@@ -61,7 +61,22 @@ plot_mri_fullerene(z_slice = 0.0, lang = "en")
 plot_mri_octawave(z_slice = 0.5, lang = "en")
 ```
 
-## 4. Automated Multi-Format Export
+
+## 4. Advanced Spectral Analysis & WebGL 3D Bridge
+
+The package now includes high-performance analytical tools to process multidimensional wave spatial trajectories and bridge them seamlessly with the external WebGL rendering engine `sync3d`.
+
+```{r spectral_examples, eval = FALSE}
+# 1. Execute discrete Fast Fourier Transform (FFT) analysis on raw coordinates
+# (Watch the console for signature Kata-vibe!)
+wave_analysis <- wave2lyze(raw_quantum_data)
+
+# 2. Construct the topological node-edge framework for sync3d acceleration
+sync_bridge <- prep_sync3d(wave_analysis)
+```
+
+
+## 5. Automated Multi-Format Export
 
 For scientific presentations, you can automatically export a complete series of slices as high-resolution PNG images and a multi-page presentation PDF with a single command. To comply with secure environment policies, files are written to a temporary directory by default, but a custom path can be supplied:
 

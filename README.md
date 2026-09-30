@@ -54,3 +54,48 @@ The `'octawave'` package transcends traditional, static modeling constraints by 
 * **Export 3D Octawave Snapshot Series:** Saves a sequential series of 3D snapshots as PNG files to capture and visualize continuous wave progression.
 * **Interactive Drop Zone:** Allows users to click directly into the plot to trigger and seed a new wave at that exact physical coordinate.
 * **Interactive Multi-Drop 3D Zone:** Allows users to click three sequential times to dynamically create and overlay overlapping waves within the 3D landscape.
+
+### 4. Advanced Spectral Analysis & WebGL Acceleration (New in v0.1.1)
+* **Core Spectral Analysis (`wave2lyze`):** Processes multidimensional spatial coordinates to extract Euclidean amplitudes and applies Fast Fourier Transforms (FFT) to decode hidden quantum interference patterns. 
+* **Topological WebGL Interface (`prep_sync3d`):** Bridges the analytical results of octawave with the 'sync3d' engine. It auto-generates localized node-edge structures for high-performance, frame-accurate 3D rendering, completely bypassing standard browser lag.
+
+---
+
+## Advanced Feature: Quantum Wave Analysis & sync3d Integration
+
+The latest update introduces `wave2lyze` and `prep_sync3d`, forming a direct topological bridge to the **sync3d** package. By transforming spectral analysis data into optimized node-edge matrices, it unlocks high-performance, hardware-accelerated 3D WebGL rendering through the `add_synchronized_3d_edges()` pipeline without browser lag.
+
+### Quick Start: 3D Quantum Wave Synchronization
+
+```r
+library(octawave)
+library(plotly)
+library(sync3d)
+
+# 1. Simulate complex harmonic wave data
+time_vec <- seq(0, 4 * pi, length.out = 100)
+raw_quantum_data <- data.frame(X = sin(time_vec), Y = cos(time_vec))
+
+# 2. Analyze phase space and generate the topological bridge
+analysis <- wave2lyze(raw_quantum_data)
+sync_data <- prep_sync3d(analysis)
+
+# 3. Render synchronized structure via the sync3d engine
+base_plot <- plot_ly(data = sync_data$nodes, x = ~x, y = ~y, z = ~z,
+                     type = 'scatter3d', mode = 'markers',
+                     marker = list(size = 4, color = '#008080'))
+
+final_plot <- add_synchronized_3d_edges(base_plot, sync_data$edges)
+final_plot
+```
+
+---
+
+## Installation
+
+You can install the official released version of **octawave** directly from CRAN with:
+
+```r
+install.packages("octawave")
+```
+

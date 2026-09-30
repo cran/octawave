@@ -1,19 +1,19 @@
 Package: octawave
 Type: Package
 Title: Spatial Octahedral Quantum Wave Functions
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Katharina", "Brecht", email = "katharina.quantumdata@proton.me", role = c("aut", "cre"), comment = c(ORCID = "0009-0001-2176-7476"))
 Description: Provides mathematical tools for simulating and visualizing three-dimensional octahedral quantum wave interferences and spatial resonance fields. Includes functions for MRI slice generation of fullerene structures and wave models. Computational modeling and three-dimensional visualization of fullerene and octahedral topologies are implemented within the R statistical environment, with interactive plotting powered by 'plotly'. Theoretical foundations are based on the topological frameworks of Cataldo et al. (2015) <doi:10.1002/wcms.1207>, Dresselhaus et al. (1996, ISBN:9780122218200), and Coxeter (1973, ISBN:9780486614809); the geometric principles of equations of the octahedron type are outlined in Bobenko and Suris (2012) <doi:10.1093/imrn/rnr083>. Additional structural and biological symmetry contexts are derived from Bragg (1914) <doi:10.1098/rspa.1914.0015> and Caspar and Klug (1962) <doi:10.1101/sqb.1962.027.001.005>.
 License: GPL-3
 Encoding: UTF-8
-Imports: graphics, grDevices, matlab, plotly
+Imports: graphics, grDevices, matlab, plotly, sync3d
 Config/roxygen2/version: 8.1.0
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2026-08-26 10:50:27 UTC; katharinabrecht
+Packaged: 2026-09-30 12:39:24 UTC; katharinabrecht
 Author: Katharina Brecht [aut, cre] (ORCID:
     <https://orcid.org/0009-0001-2176-7476>)
 Maintainer: Katharina Brecht <katharina.quantumdata@proton.me>
 Repository: CRAN
-Date/Publication: 2026-09-08 13:40:13 UTC
+Date/Publication: 2026-09-30 17:00:02 UTC

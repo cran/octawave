@@ -24,6 +24,14 @@ library(octawave)
 # # Display a single MRI slice for Octawave structures
 # plot_mri_octawave(z_slice = 0.5, lang = "en")
 
+## ----spectral_examples, eval = FALSE------------------------------------------
+# # 1. Execute discrete Fast Fourier Transform (FFT) analysis on raw coordinates
+# # (Watch the console for signature Kata-vibe!)
+# wave_analysis <- wave2lyze(raw_quantum_data)
+# 
+# # 2. Construct the topological node-edge framework for sync3d acceleration
+# sync_bridge <- prep_sync3d(wave_analysis)
+
 ## ----export_example, eval = FALSE---------------------------------------------
 # # Automatically export slice series of Fullerene and Octawave models
 # # Developed by Katharina M. Brecht into a designated target directory
